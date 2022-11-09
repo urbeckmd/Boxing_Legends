@@ -1,5 +1,7 @@
 # Functionality of this application
 
+![](resourcesForReadme/demo.mp4)
+
 ## Home Page
 - This is the home page that loads when the application is opened.
 
