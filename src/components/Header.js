@@ -1,5 +1,7 @@
 import React from "react";
 import "./Header.css";
+import Tools from "./Tools";
+
 
 
 function Header() {
@@ -16,9 +18,10 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <div className="header__home">
+        <Tools />
+        {/* <div className="header__home">
             <h2>Home</h2>
-        </div>
+        </div> */}
       </div>
     </div>
   );

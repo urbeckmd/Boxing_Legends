@@ -30,7 +30,7 @@ function Tools() {
       </div>
 
       <div className="tools__right">
-        <Button className="tools__addButton" variant="danger" onClick={() => dispatch(addNewBoxer())}>
+        <Button className="tools__addButton" variant="light" onClick={() => dispatch(addNewBoxer())}>
           <AddIcon />
           <h5>Add Boxer</h5>
         </Button>

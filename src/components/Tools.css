@@ -1,8 +1,9 @@
 .tools__container {
     display: flex;
     justify-content: space-between;
-    padding: 30px 60px;
+    padding: 30px 0px;
     align-items: center;
+    width: 450px;
 }
 
 .tools__search > Form {

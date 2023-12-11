@@ -3,7 +3,9 @@
     color: white; 
     padding: 3px;
     margin-top: 657px;
-
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer__container > h5 {

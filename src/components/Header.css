@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     color: white;
-    padding: 10px 60px;
+    padding: 10px 10%;
     align-items: center;
 }
 
@@ -30,4 +30,10 @@
 .header__home:hover {
     cursor: pointer;
     color: lightgray;
+}
+
+.header__right {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
 }

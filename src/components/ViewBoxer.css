@@ -53,6 +53,8 @@
     height: 40vh;
     min-height: 200px;
     overflow-y: scroll;
+    display: flex;
+    justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -75,4 +77,83 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.viewBoxer__footer_leftside {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    /* background-color: blue; */
+}
+
+.watch_fight_button {
+    position: relative;
+    /* left: -30px; */
+}
+
+.fight_video_single_row {
+    display: flex;
+    /* padding: 0 20px; */
+    /* justify-content: space-around; */
+    align-items: center;
+    height: 100px;
+    /* margin-bottom: 40px; */
+}
+
+.fight_number {
+    flex: .075;
+}
+
+.fight_video_container {
+    width: 90%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.fight_youtube_thumbnail_container {
+    flex: .3;
+}
+
+.fight_youtube_thumbnail {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100px;
+    width: 180px;
+}
+
+.fight_info {
+    /* position: relative;
+    left: -80px; */
+    flex: .6;
+}
+
+.fight_date {
+    font-size: medium;
+    font-weight: 500;
+}
+
+.fight_watched {
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin: 0 !important;
+}
+
+.fight_watched_checkbox {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.form-check-input:focus {
+    border-color: #ff4444 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.20rem #ff444449 !important;
+}
+
+.form-check-input:checked {
+    background-color: #ff4444 !important;
+    border-color: #ff4444 !important;
 }
