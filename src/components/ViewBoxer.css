@@ -119,12 +119,41 @@
     overflow: hidden;
     height: 100px;
     width: 180px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fight_youtube_thumbnail:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(0.95);
+}
+
+.fight_youtube_link {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+
+.fight_youtube_thumbnail_image {
+    position: absolute;
+}
+
+.fight_youtube_icon {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(2.5);
+
 }
 
 .fight_info {
     /* position: relative;
     left: -80px; */
     flex: .6;
+    user-select: none;
 }
 
 .fight_date {

@@ -12,6 +12,7 @@ import InputBar from "./InputBar";
 import Form from 'react-bootstrap/Form';
 import PropTypes from "prop-types";
 import AddIcon from '@mui/icons-material/Add';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 function ViewBoxer(props) {
   const currentBoxerInfo = useSelector(selectCurrentBoxer);
@@ -77,9 +78,12 @@ function ViewBoxer(props) {
     </div>
   );
 
+  const resetVideos = () => {
+    setFightsArray([])
+  }
   return (
     <div className="viewBoxer__container">
-      <Modal {...props} size="lg" centered>
+      <Modal {...props} size="lg" centered onExit={() => resetVideos()}>
         <div className="viewBoxer__Header" style={{ backgroundImage: "url(" + imgURL + ")" }}>
           <Modal.Header className="viewBoxer__ModalHeader">
             <Modal.Title id="contained-modal-title-vcenter">
@@ -113,33 +117,43 @@ function ViewBoxer(props) {
               <div className="fight_video_container">
                 {fightsArray.map((fight, index) => {
                   var watched = fight.watched
-                  return (
-                    <>
-                    <div className="fight_video_single_row">
-                      <div className="fight_number">{fight.fightNumber}.</div>
-                      <div className="fight_youtube_thumbnail_container">
-                        <div className="fight_youtube_thumbnail">
-                          <YoutubeEmbed embedId={fight.youtubeID} />
+                  console.log(currentBoxerInfo);
+                  if ((fight.youtubeID).slice(0, 4) != "xxxx") {
+                    var fighter = fight.thumbnailImageName;
+                    fighter = fighter.split("_")[0].replace(".", "");
+                    return (
+                      <>
+                        <div className="fight_video_single_row">
+                          <div className="fight_number">{fight.fightNumber}.</div>
+                          <div className="fight_youtube_thumbnail_container">
+                            <div className="fight_youtube_thumbnail">
+                              {/* <YoutubeEmbed embedId={fight.youtubeID} /> */}
+                              <a className="fight_youtube_link" href={`https://www.youtube.com/watch?v=${fight.youtubeID}`} target="_blank">
+                                <img className="fight_youtube_thumbnail_image" src={require(`../images/thumbnail_images/${fighter}/${fight.thumbnailImageName}`)} height="100" width="180" />
+                                <PlayCircleOutlineIcon className="fight_youtube_icon" />
+                              </a>
+                            </div>
+                          </div>
+                          <div className="fight_info">
+                            <div className="fight_opponent">vs. {fight.opponent}</div>
+                            <div className="fight_date">{fight.date}</div>
+                          </div>
+                          <div className="fight_watched">
+                            <Form.Check
+                              className="fight_watched_checkbox"
+                              type={'checkbox'}
+                              id={'default-checkbox'}
+                              checked={watched}
+                              onClick={watched = !watched}
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <div className="fight_info">
-                        <div className="fight_opponent">vs. {fight.opponent}</div>
-                        <div className="fight_date">{fight.date}</div>
-                      </div>
-                      <div className="fight_watched">
-                        <Form.Check
-                          className="fight_watched_checkbox"
-                          type={'checkbox'}
-                          id={'default-checkbox'}
-                          checked={watched}
-                          onClick={watched = !watched}
-                        />
-                      </div>
-                    </div>
-                    <hr />
-                    </>
-                    
-                  )
+                        <hr />
+                      </>
+
+                    )
+                  }
+
                 })
                 }
               </div>
@@ -180,5 +194,6 @@ function ViewBoxer(props) {
     </div>
   );
 }
+
 
 export default ViewBoxer;

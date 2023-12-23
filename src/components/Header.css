@@ -5,6 +5,7 @@
     color: white;
     padding: 10px 10%;
     align-items: center;
+    /* height: 100%; */
 }
 
 .header__left {
@@ -33,7 +34,6 @@
 }
 
 .header__right {
-    /* background-color: blue; */
     display: flex;
     justify-content: space-between;
 }

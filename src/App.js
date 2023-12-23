@@ -23,10 +23,9 @@ function App() {
       <div className="app__home" style={{ opacity: addNewBoxerOpen && "0.2" }}>
         <Header />
         <div className="app__body">
-          {/* <Tools /> */}
-          <Boxers />
-          <Footer />
+          <Boxers className="app__body" />
         </div>
+        <Footer />
       </div>
 
       <AddBoxer

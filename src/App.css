@@ -1,15 +1,14 @@
 .app__body {
     background-color: whitesmoke;
-}
-
-.app__body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* flex-direction: column;
-    min-height: calc(100vh - 80px);
-    justify-content: space-between; */
 }
-.app__boxers {
-    align-items: flex-start;
+
+.app_home {
+    min-height: 100vh !important;
+}
+
+.app {
+    height: 100vh !important;
 }
